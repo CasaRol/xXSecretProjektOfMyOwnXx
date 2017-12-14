@@ -16,17 +16,17 @@
             <Image url="@AssetesLibrary/Ohms_law_wheel_WVOA.svg.png" />
          </image>
       </ImageView>
-      <RadioButton fx:id="ohmTimesAmp" layoutX="214.0" layoutY="287.0" mnemonicParsing="false" onAction="#watt2">
+      <RadioButton fx:id="ohmTimesAmp2nd" layoutX="214.0" layoutY="287.0" mnemonicParsing="false" onAction="#watt2">
          <toggleGroup>
             <ToggleGroup fx:id="selectOption" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="volt2ndOverOhm" layoutX="264.0" layoutY="258.0" mnemonicParsing="false" onAction="#watt3" toggleGroup="$selectOption" />
-      <RadioButton fx:id="voltOverOhm" layoutX="322.0" layoutY="258.0" mnemonicParsing="false" onAction="#amp1" toggleGroup="$selectOption" />
+      <RadioButton fx:id="volt2ndOverOhm" layoutX="264.0" layoutY="265.0" mnemonicParsing="false" onAction="#watt3" toggleGroup="$selectOption" />
+      <RadioButton fx:id="voltOverOhm" layoutX="322.0" layoutY="265.0" mnemonicParsing="false" onAction="#amp1" toggleGroup="$selectOption" />
       <RadioButton fx:id="wattOverVolt" layoutX="375.0" layoutY="287.0" mnemonicParsing="false" onAction="#amp2" toggleGroup="$selectOption" />
       <RadioButton fx:id="wattOverOhmSqrt" layoutX="396.0" layoutY="341.0" mnemonicParsing="false" onAction="#amp3" toggleGroup="$selectOption" />
       <RadioButton fx:id="voltOverAmp" layoutX="396.0" layoutY="393.0" mnemonicParsing="false" onAction="#ohm1" toggleGroup="$selectOption" />
       <RadioButton fx:id="voltOverWatt" layoutX="374.0" layoutY="444.0" mnemonicParsing="false" onAction="#ohm2" toggleGroup="$selectOption" />
-      <RadioButton fx:id="wattOverAmp" layoutX="320.0" layoutY="473.0" mnemonicParsing="false" onAction="#ohm3" toggleGroup="$selectOption" />
+      <RadioButton fx:id="wattOverAmp2nd" layoutX="320.0" layoutY="473.0" mnemonicParsing="false" onAction="#ohm3" toggleGroup="$selectOption" />
       <RadioButton fx:id="ohmTimesAmp" layoutX="264.0" layoutY="473.0" mnemonicParsing="false" onAction="#volt1" toggleGroup="$selectOption" />
       <RadioButton fx:id="wattOverAmp" layoutX="214.0" layoutY="444.0" mnemonicParsing="false" onAction="#volt2" toggleGroup="$selectOption" />
       <RadioButton fx:id="ohmTimesWattSqrt" layoutX="192.0" layoutY="393.0" mnemonicParsing="false" onAction="#volt3" toggleGroup="$selectOption" />

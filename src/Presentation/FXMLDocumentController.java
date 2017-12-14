@@ -73,11 +73,16 @@ public class FXMLDocumentController implements Initializable {
     private TextField ohminput;
     @FXML
     private Button calculate;
+    @FXML
+    private RadioButton wattOverAmp2nd;
+    @FXML
+    private RadioButton ohmTimesAmp2nd;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
         business = UI.getInstance().getBusiness();
+        
         
     }
 
@@ -95,22 +100,22 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void amp3(ActionEvent event) {
-        current.wattOverOhmSqrt(Double.parseDouble(wattInput.getText()), Double.parseDouble(ohminput.getText()));
+        result.setText(business.getWattOverOhmSqrt(Double.parseDouble(wattInput.getText()), Double.parseDouble(ohminput.getText())) + "");
     }
 
     @FXML
     private void ohm1(ActionEvent event) {
-        resistance.voltOverAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText()));
+        result.setText(business.getVoltOverAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText())) + "");
     }
 
     @FXML
     private void ohm2(ActionEvent event) {
-        resistance.voltOverWatt(Double.parseDouble(voltInput.getText()), Double.parseDouble(wattInput.getText()));
+        result.setText(business.getVoltOverWatt(Double.parseDouble(voltInput.getText()), Double.parseDouble(wattInput.getText())) + "");
     }
 
     @FXML
     private void ohm3(ActionEvent event) {
-        resistance.wattOverAmp(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText()));
+        result.setText(business.getWattOverAmp2nd(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText())) + "");
     }
 
     @FXML
@@ -135,7 +140,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void watt2(ActionEvent event) {
-        power.ohmTimesAmp(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText()));
+        power.ohmTimesAmp2nd(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText()));
     }
 
     @FXML
