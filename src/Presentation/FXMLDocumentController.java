@@ -20,6 +20,7 @@ import Business.Current;
 import Business.ElectromotiveForce;
 import Business.Power;
 import Business.Resistance;
+import jdk.nashorn.internal.parser.TokenType;
 
 /**
  *
@@ -58,6 +59,10 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private RadioButton voltTimesAmp;
     @FXML
+    private RadioButton wattOverAmp2nd;
+    @FXML
+    private RadioButton ohmTimesAmp2nd;
+    @FXML
     private ToggleGroup selectOption;
     @FXML
     private TextField wattInput;
@@ -73,10 +78,7 @@ public class FXMLDocumentController implements Initializable {
     private TextField ohminput;
     @FXML
     private Button calculate;
-    @FXML
-    private RadioButton wattOverAmp2nd;
-    @FXML
-    private RadioButton ohmTimesAmp2nd;
+    
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -86,83 +88,89 @@ public class FXMLDocumentController implements Initializable {
         
     }
 
-    @FXML
-    private void amp1(ActionEvent event) {
-          
-        result.setText(business.getVoltOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText())) + "");
-    }
-
-    @FXML
-    private void amp2(ActionEvent event) {
-        
-        result.setText(business.getWattOverVolt(Double.parseDouble(wattInput.getText()), Double.parseDouble(voltInput.getText())) + "");
-    }
-
-    @FXML
-    private void amp3(ActionEvent event) {
-        result.setText(business.getWattOverOhmSqrt(Double.parseDouble(wattInput.getText()), Double.parseDouble(ohminput.getText())) + "");
-    }
-
-    @FXML
-    private void ohm1(ActionEvent event) {
-        result.setText(business.getVoltOverAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText())) + "");
-    }
-
-    @FXML
-    private void ohm2(ActionEvent event) {
-        result.setText(business.getVoltOverWatt(Double.parseDouble(voltInput.getText()), Double.parseDouble(wattInput.getText())) + "");
-    }
-
-    @FXML
-    private void ohm3(ActionEvent event) {
-        result.setText(business.getWattOverAmp2nd(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText())) + "");
-    }
-
-    @FXML
-    private void volt1(ActionEvent event) {
-        result.setText(business.getOhmTimesAmp(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText())) + "");
-    }
-
-    @FXML
-    private void volt2(ActionEvent event) {
-        result.setText(business.getWattOverAmp(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText())) + "");
-    }
-
-    @FXML
-    private void volt3(ActionEvent event) {
-        result.setText(business.getOhmTimesWattSqrt(Double.parseDouble(ohminput.getText()), Double.parseDouble(wattInput.getText())) + "");
-    }
-
-    @FXML
-    private void watt1(ActionEvent event) {
-        result.setText(business.getVoltTimesAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText())) + "");
-    }
-
-    @FXML
-    private void watt2(ActionEvent event) {
-        result.setText(business.getOhmTimesAmp2nd(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText())) + "");
-    }
-
-    @FXML
-    private void watt3(ActionEvent event) {
-        result.setText(business.getVolt2ndOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText())) + "");
-    }
-    
-//    @FXML
-//    private void showResult(ActionEvent event){
-//        System.out.println("showResult called");
-//        if(voltOverOhm.isSelected()){
-//            System.out.println("If called true");
-//            double test = current.VoltOverOhm(50, 25);
-//            result.setText(test + "");
-//        } else System.out.println("Nullpointer");
+//    private void amp1(ActionEvent event) {
+//          
+//        result.setText(business.getVoltOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText())) + "");
+//    }
+//
+//    private void amp2(ActionEvent event) {
+//        
+//        result.setText(business.getWattOverVolt(Double.parseDouble(wattInput.getText()), Double.parseDouble(voltInput.getText())) + "");
+//    }
+//
+//    private void amp3(ActionEvent event) {
+//        result.setText(business.getWattOverOhmSqrt(Double.parseDouble(wattInput.getText()), Double.parseDouble(ohminput.getText())) + "");
+//    }
+//
+//    private void ohm1(ActionEvent event) {
+//        result.setText(business.getVoltOverAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText())) + "");
+//    }
+//
+//    private void ohm2(ActionEvent event) {
+//        result.setText(business.getVoltOverWatt(Double.parseDouble(voltInput.getText()), Double.parseDouble(wattInput.getText())) + "");
+//    }
+//
+//    private void ohm3(ActionEvent event) {
+//        result.setText(business.getWattOverAmp2nd(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText())) + "");
+//    }
+//
+//    private void volt1(ActionEvent event) {
+//        result.setText(business.getOhmTimesAmp(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText())) + "");
+//    }
+//
+//    private void volt2(ActionEvent event) {
+//        result.setText(business.getWattOverAmp(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText())) + "");
+//    }
+//
+//    private void volt3(ActionEvent event) {
+//        result.setText(business.getOhmTimesWattSqrt(Double.parseDouble(ohminput.getText()), Double.parseDouble(wattInput.getText())) + "");
+//    }
+//
+//    private void watt1(ActionEvent event) {
+//        result.setText(business.getVoltTimesAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText())) + "");
+//    }
+//
+//    private void watt2(ActionEvent event) {
+//        result.setText(business.getOhmTimesAmp2nd(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText())) + "");
+//    }
+//
+//    private void watt3(ActionEvent event) {
+//        result.setText(business.getVolt2ndOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText())) + "");
 //    }
     
-    private void calculate(){
-        if(wattInput != null && voltInput != null){
-            wattOverVolt.setVisible(true);
+    @FXML
+    private void showResult(ActionEvent event){
+        
+        if(voltOverOhm.isSelected() && voltInput != null && ohminput != null){
+              result.setText(business.getVoltOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText())) + "");          
+        } else if(wattOverVolt.isSelected() && wattInput != null && voltInput != null){
+            result.setText(business.getWattOverVolt(Double.parseDouble(wattInput.getText()), Double.parseDouble(voltInput.getText())) + "");
+        } else if(wattOverOhmSqrt.isSelected() && wattInput != null && ohminput != null){
+            result.setText(business.getWattOverOhmSqrt(Double.parseDouble(wattInput.getText()), Double.parseDouble(ohminput.getText())) + "");
+        } else if(voltOverAmp.isSelected() && voltInput != null && ampInput != null){
+            result.setText(business.getVoltOverAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText())) + "");
+        } else if(voltOverWatt.isSelected() && voltInput != null && wattInput != null){
+            result.setText(business.getVoltOverWatt(Double.parseDouble(voltInput.getText()), Double.parseDouble(wattInput.getText())) + "");
+        } else if(wattOverAmp2nd.isSelected() && wattInput != null && ampInput != null){
+            result.setText(business.getWattOverAmp2nd(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText())) + "");
+        } else if(ohmTimesAmp.isSelected() && ohminput != null && ampInput != null){
+            result.setText(business.getWattOverAmp(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText())) + "");
+        } else if(wattOverAmp.isSelected() && wattInput != null && ampInput != null){
+            result.setText(business.getWattOverAmp(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText())) + "");
+        } else if(ohmTimesWattSqrt.isSelected() && ohminput != null && wattInput != null){
+            result.setText(business.getOhmTimesWattSqrt(Double.parseDouble(ohminput.getText()), Double.parseDouble(wattInput.getText())) + "");
+        }else if(voltTimesAmp.isSelected() && voltInput != null && ampInput != null){
+            result.setText(business.getVoltTimesAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText())) + "");
+        } else if(ohmTimesAmp2nd.isSelected() && ohminput != null && ampInput != null){
+            result.setText(business.getOhmTimesAmp2nd(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText())) + "");
+        } else if(volt2ndOverOhm.isSelected() && voltInput != null && ohminput != null){
+            result.setText(business.getVolt2ndOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText())) + "");
+        } else{
+            System.out.println("Please enter valid numbers and select calcualtion method");
         }
     }
+    
+    
     
     @FXML
     private void reset(ActionEvent event){
@@ -171,6 +179,18 @@ public class FXMLDocumentController implements Initializable {
         ampInput.clear();
         voltInput.clear();
         result.clear();
+        voltOverOhm.setSelected(false);
+        wattOverVolt.setSelected(false);
+        ohmTimesAmp.setSelected(false);
+        volt2ndOverOhm.setSelected(false);
+        wattOverOhmSqrt.setSelected(false);
+        voltOverAmp.setSelected(false);
+        voltOverWatt.setSelected(false);
+        wattOverAmp.setSelected(false);
+        ohmTimesWattSqrt.setSelected(false);
+        voltTimesAmp.setSelected(false);
+        wattOverAmp2nd.setSelected(false);
+        ohmTimesAmp2nd.setSelected(false);
     }
 
 }
