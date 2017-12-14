@@ -13,5 +13,7 @@ public interface IBusiness {
     
     void injectData(IData data);
     
+    double getVoltOverOhm(double volt, double ohm);
+    
     
 }

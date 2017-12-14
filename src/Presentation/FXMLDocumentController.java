@@ -5,7 +5,7 @@
  */
 package Presentation;
 
-import java.math.BigDecimal;
+import Acquaintance.IBusiness;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
@@ -26,6 +26,8 @@ import Business.Resistance;
  * @author Alexa
  */
 public class FXMLDocumentController implements Initializable {
+    
+    private IBusiness business;
 
     private Power power;
     private Current current;
@@ -75,18 +77,16 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        this.current = new Current();
-        this.power = new Power();
+        business = UI.getInstance().getBusiness();
+        
     }
 
     @FXML
     private void amp1(ActionEvent event) {
-        System.out.println(voltInput.getText());
-        System.out.println(ohminput.getText());
-        System.out.println(Double.parseDouble(voltInput.getText())/Double.parseDouble(ohminput.getText()));
+              
+        double calculation = business.getVoltOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText()));
         
-        double calculation = current.VoltOverOhm(10.0, 5.0);
-
+        result.clear();
         result.setText(calculation + "");
     }
 

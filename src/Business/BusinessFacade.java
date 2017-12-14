@@ -23,5 +23,12 @@ public class BusinessFacade implements IBusiness {
         this.data = data;
         
     }
+
+    @Override
+    public double getVoltOverOhm(double volt, double ohm) {
+        Current current = new Current();
+        
+        return current.VoltOverOhm(volt, ohm);
+    }
     
 }
