@@ -12,26 +12,24 @@ package Business;
 public class Resistance {
     //Ohm
     
+    double ohm;
     
-    public void wattOverAmp(double watt, double amp) {
-        double ohm = watt/Math.pow(amp, 2);
+    public double wattOverAmp2nd(double watt, double amp) {
+        ohm = watt/Math.pow(amp, 2);
         
-        System.out.println("Ohms needed = " + ohm);
-        
+        return ohm;
     }
     
-    public void voltOverWatt(double volt, double watt){
-        double ohm = (Math.pow(volt, 2))/watt;
+    public double voltOverWatt(double volt, double watt){
+        ohm = (Math.pow(volt, 2))/watt;
         
-        System.out.println("Ohms needed = " + ohm);
-        
+        return ohm; 
     }
     
-    public void voltOverAmp(double volt, double amp){
-        double ohm = volt / amp;
+    public double voltOverAmp(double volt, double amp){
+        ohm = volt / amp;
         
-        System.out.println("ohms needed = " + ohm);
-        
+        return ohm;
     }
     
 }

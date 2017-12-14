@@ -120,32 +120,32 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void volt1(ActionEvent event) {
-        eForce.ohmTimesAmp(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText()));
+        result.setText(business.getOhmTimesAmp(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText())) + "");
     }
 
     @FXML
     private void volt2(ActionEvent event) {
-        eForce.wattOverAmp(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText()));
+        result.setText(business.getWattOverAmp(Double.parseDouble(wattInput.getText()), Double.parseDouble(ampInput.getText())) + "");
     }
 
     @FXML
     private void volt3(ActionEvent event) {
-        eForce.ohmTimesWattSqwrt(Double.parseDouble(ohminput.getText()), Double.parseDouble(wattInput.getText()));
+        result.setText(business.getOhmTimesWattSqrt(Double.parseDouble(ohminput.getText()), Double.parseDouble(wattInput.getText())) + "");
     }
 
     @FXML
     private void watt1(ActionEvent event) {
-        power.voltTimesAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText()));
+        result.setText(business.getVoltTimesAmp(Double.parseDouble(voltInput.getText()), Double.parseDouble(ampInput.getText())) + "");
     }
 
     @FXML
     private void watt2(ActionEvent event) {
-        power.ohmTimesAmp2nd(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText()));
+        result.setText(business.getOhmTimesAmp2nd(Double.parseDouble(ohminput.getText()), Double.parseDouble(ampInput.getText())) + "");
     }
 
     @FXML
     private void watt3(ActionEvent event) {
-        power.volt2ndOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText()));
+        result.setText(business.getVolt2ndOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText())) + "");
     }
     
 //    @FXML

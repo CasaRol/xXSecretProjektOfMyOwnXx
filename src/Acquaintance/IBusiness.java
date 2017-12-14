@@ -19,5 +19,25 @@ public interface IBusiness {
     
     double getWattOverOhmSqrt(double watt, double ohm);
     
+    double getVoltOverAmp(double volt, double amp);
+    
+    double getVoltOverWatt(double volt, double watt);
+    
+    double getWattOverAmp2nd(double watt, double amp);
+    
+    double getOhmTimesAmp(double ohm, double amp);
+    
+    double getWattOverAmp(double watt, double amp);
+    
+    double getOhmTimesWattSqrt(double ohm, double watt);
+    
+    double getVoltTimesAmp(double volt, double amp);
+    
+    double getOhmTimesAmp2nd(double ohm, double amp);
+    
+    double getVolt2ndOverOhm(double volt, double ohm); 
+    
+    
+    
     
 }

@@ -12,28 +12,28 @@ package Business;
 public class Power {
     //Watt
     
+    double watt;
     
     
-    
-    public void volt2ndOverOhm(double volt, double ohm){
-        double watt = (Math.pow(volt, 2))/ohm;
+    public double volt2ndOverOhm(double volt, double ohm){
+        watt = (Math.pow(volt, 2))/ohm;
         
         
-        System.out.println("Watts needed = " + watt);
+        return watt;
         
     }
     
-    public void ohmTimesAmp(double ohm, double amp){
-        double watt = ohm * (Math.pow(amp, 2));
+    public double ohmTimesAmp2nd(double ohm, double amp){
+        watt = ohm * (Math.pow(amp, 2));
         
         
-        System.out.println("Watts needed = " + watt);
+        return watt;
     }
     
-    public void voltTimesAmp(double volt, double amp){
-        double watt = volt * amp;
+    public double voltTimesAmp(double volt, double amp){
+        watt = volt * amp;
         
-        System.out.println("Watts needed = " + watt);
+        return watt;
     }
     
 }

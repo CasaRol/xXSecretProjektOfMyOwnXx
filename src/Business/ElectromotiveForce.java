@@ -12,23 +12,24 @@ package Business;
 public class ElectromotiveForce {
     //Volt
     
+    double volt;
     
-    public void ohmTimesWattSqwrt(double ohm, double watt){
-        double volt = Math.sqrt(ohm * watt);
+    public double ohmTimesWattSqwrt(double ohm, double watt){
+        volt = Math.sqrt(ohm * watt);
         
-        System.out.println("Volts needed = " + volt);
+        return volt;
     }
     
-    public void wattOverAmp(double watt, double amp){
-        double volt = (watt / amp);
+    public double wattOverAmp(double watt, double amp){
+        volt = (watt / amp);
         
-        System.out.println("Volts needed = " + volt);
+        return volt;
     }
     
-    public void ohmTimesAmp(double ohm, double amp){
-        double volt = ohm * amp;
+    public double ohmTimesAmp(double ohm, double amp){
+        volt = ohm * amp;
         
-        System.out.println("Volts needed = " + volt);
+        return volt;
     }
     
 }
