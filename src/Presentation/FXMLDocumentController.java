@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package ohmshjulcalculator;
+package Presentation;
 
 import java.math.BigDecimal;
 import java.net.URL;
@@ -16,6 +16,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
+import ohmshjulcalculator.Current;
+import ohmshjulcalculator.ElectromotiveForce;
+import ohmshjulcalculator.Power;
+import ohmshjulcalculator.Resistance;
 
 /**
  *
@@ -71,6 +75,8 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        this.current = new Current();
+        this.power = new Power();
     }
 
     @FXML
@@ -79,7 +85,7 @@ public class FXMLDocumentController implements Initializable {
         System.out.println(ohminput.getText());
         System.out.println(Double.parseDouble(voltInput.getText())/Double.parseDouble(ohminput.getText()));
         
-        double calculation = current.VoltOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText()));
+        double calculation = current.VoltOverOhm(10.0, 5.0);
 
         result.setText(calculation + "");
     }
