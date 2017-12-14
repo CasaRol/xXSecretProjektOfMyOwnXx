@@ -13,7 +13,7 @@
    <children>
       <ImageView fitHeight="563.0" fitWidth="574.0" layoutX="14.0" layoutY="94.0">
          <image>
-            <Image url="@Ohms_law_wheel_WVOA.svg.png" />
+            <Image url="@AssetesLibrary/Ohms_law_wheel_WVOA.svg.png" />
          </image>
       </ImageView>
       <RadioButton fx:id="ohmTimesAmp" layoutX="214.0" layoutY="287.0" mnemonicParsing="false" onAction="#watt2">
