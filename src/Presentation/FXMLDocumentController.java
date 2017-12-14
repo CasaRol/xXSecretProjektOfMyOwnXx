@@ -158,6 +158,12 @@ public class FXMLDocumentController implements Initializable {
 //        } else System.out.println("Nullpointer");
 //    }
     
+    private void calculate(){
+        if(wattInput != null && voltInput != null){
+            wattOverVolt.setVisible(true);
+        }
+    }
+    
     @FXML
     private void reset(ActionEvent event){
         wattInput.clear();

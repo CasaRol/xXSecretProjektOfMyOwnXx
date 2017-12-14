@@ -16,21 +16,21 @@
             <Image url="@AssetesLibrary/Ohms_law_wheel_WVOA.svg.png" />
          </image>
       </ImageView>
-      <RadioButton fx:id="ohmTimesAmp2nd" layoutX="214.0" layoutY="287.0" mnemonicParsing="false" onAction="#watt2">
+      <RadioButton fx:id="ohmTimesAmp2nd" layoutX="214.0" layoutY="287.0" mnemonicParsing="false" onAction="#watt2" visible="false">
          <toggleGroup>
             <ToggleGroup fx:id="selectOption" />
          </toggleGroup></RadioButton>
-      <RadioButton fx:id="volt2ndOverOhm" layoutX="264.0" layoutY="265.0" mnemonicParsing="false" onAction="#watt3" toggleGroup="$selectOption" />
-      <RadioButton fx:id="voltOverOhm" layoutX="322.0" layoutY="265.0" mnemonicParsing="false" onAction="#amp1" toggleGroup="$selectOption" />
-      <RadioButton fx:id="wattOverVolt" layoutX="375.0" layoutY="287.0" mnemonicParsing="false" onAction="#amp2" toggleGroup="$selectOption" />
-      <RadioButton fx:id="wattOverOhmSqrt" layoutX="396.0" layoutY="341.0" mnemonicParsing="false" onAction="#amp3" toggleGroup="$selectOption" />
-      <RadioButton fx:id="voltOverAmp" layoutX="396.0" layoutY="393.0" mnemonicParsing="false" onAction="#ohm1" toggleGroup="$selectOption" />
-      <RadioButton fx:id="voltOverWatt" layoutX="374.0" layoutY="444.0" mnemonicParsing="false" onAction="#ohm2" toggleGroup="$selectOption" />
-      <RadioButton fx:id="wattOverAmp2nd" layoutX="320.0" layoutY="473.0" mnemonicParsing="false" onAction="#ohm3" toggleGroup="$selectOption" />
-      <RadioButton fx:id="ohmTimesAmp" layoutX="264.0" layoutY="473.0" mnemonicParsing="false" onAction="#volt1" toggleGroup="$selectOption" />
-      <RadioButton fx:id="wattOverAmp" layoutX="214.0" layoutY="444.0" mnemonicParsing="false" onAction="#volt2" toggleGroup="$selectOption" />
-      <RadioButton fx:id="ohmTimesWattSqrt" layoutX="192.0" layoutY="393.0" mnemonicParsing="false" onAction="#volt3" toggleGroup="$selectOption" />
-      <RadioButton fx:id="voltTimesAmp" layoutX="181.0" layoutY="333.0" mnemonicParsing="false" onAction="#watt1" toggleGroup="$selectOption" />
+      <RadioButton fx:id="volt2ndOverOhm" layoutX="264.0" layoutY="265.0" mnemonicParsing="false" onAction="#watt3" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="voltOverOhm" layoutX="322.0" layoutY="265.0" mnemonicParsing="false" onAction="#amp1" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="wattOverVolt" layoutX="375.0" layoutY="287.0" mnemonicParsing="false" onAction="#amp2" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="wattOverOhmSqrt" layoutX="396.0" layoutY="341.0" mnemonicParsing="false" onAction="#amp3" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="voltOverAmp" layoutX="396.0" layoutY="393.0" mnemonicParsing="false" onAction="#ohm1" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="voltOverWatt" layoutX="374.0" layoutY="444.0" mnemonicParsing="false" onAction="#ohm2" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="wattOverAmp2nd" layoutX="320.0" layoutY="473.0" mnemonicParsing="false" onAction="#ohm3" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="ohmTimesAmp" layoutX="264.0" layoutY="473.0" mnemonicParsing="false" onAction="#volt1" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="wattOverAmp" layoutX="214.0" layoutY="444.0" mnemonicParsing="false" onAction="#volt2" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="ohmTimesWattSqrt" layoutX="192.0" layoutY="393.0" mnemonicParsing="false" onAction="#volt3" toggleGroup="$selectOption" visible="false" />
+      <RadioButton fx:id="voltTimesAmp" layoutX="181.0" layoutY="333.0" mnemonicParsing="false" onAction="#watt1" toggleGroup="$selectOption" visible="false" />
       <TextField editable="false" focusTraversable="false" layoutX="179.0" layoutY="40.0" prefHeight="25.0" prefWidth="244.0" text="Press the button for the needed calculation" />
       <Label layoutX="199.0" layoutY="163.0" text="3" />
       <Label layoutX="102.0" layoutY="241.0" text="2" />
@@ -44,7 +44,7 @@
       <Label layoutX="496.0" layoutY="267.0" text="3" textFill="#fffbfb" />
       <Label layoutX="420.0" layoutY="179.0" text="2" textFill="#fffbfb" />
       <Label layoutX="306.0" layoutY="146.0" text="1" textFill="#fffbfb" />
-      <AnchorPane layoutX="588.0" prefHeight="749.0" prefWidth="381.0">
+      <AnchorPane layoutX="580.0" prefHeight="749.0" prefWidth="381.0">
          <children>
             <TextField alignment="CENTER" editable="false" focusTraversable="false" layoutX="116.0" layoutY="40.0" text="Calculation" />
             <TextField fx:id="wattInput" alignment="CENTER" layoutX="116.0" layoutY="150.0" promptText="Please enter value" />
@@ -56,9 +56,9 @@
             <Label alignment="CENTER" layoutX="167.0" layoutY="268.0" prefHeight="17.0" prefWidth="48.0" text="Ohm" />
             <Label alignment="CENTER" layoutX="155.0" layoutY="333.0" prefHeight="17.0" prefWidth="73.0" text="Amperer" />
             <TextField fx:id="result" alignment="CENTER" editable="false" focusTraversable="false" layoutX="117.0" layoutY="532.0" promptText="Result display" />
-            <Button fx:id="clearButton" layoutX="142.0" layoutY="579.0" mnemonicParsing="false" onAction="#reset" text="New calculation" />
+            <Button fx:id="clearButton" layoutX="169.0" layoutY="613.0" mnemonicParsing="false" onAction="#reset" text="Clear" />
             <Label alignment="CENTER" layoutX="168.0" layoutY="515.0" prefHeight="17.0" prefWidth="48.0" text="Result" />
-            <Button fx:id="calculate" layoutX="166.0" layoutY="614.0" mnemonicParsing="false" text="Caculate" />
+            <Button fx:id="calculate" layoutX="161.0" layoutY="573.0" mnemonicParsing="false" text="Caculate" />
          </children>
       </AnchorPane>
    </children>
