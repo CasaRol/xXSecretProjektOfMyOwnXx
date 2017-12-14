@@ -16,10 +16,10 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 import javafx.scene.control.ToggleGroup;
-import ohmshjulcalculator.Current;
-import ohmshjulcalculator.ElectromotiveForce;
-import ohmshjulcalculator.Power;
-import ohmshjulcalculator.Resistance;
+import Business.Current;
+import Business.ElectromotiveForce;
+import Business.Power;
+import Business.Resistance;
 
 /**
  *
