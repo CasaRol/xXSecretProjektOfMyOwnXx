@@ -15,5 +15,9 @@ public interface IBusiness {
     
     double getVoltOverOhm(double volt, double ohm);
     
+    double getWattOverVolt(double watt, double volt);
+    
+    double getWattOverOhmSqrt(double watt, double ohm);
+    
     
 }

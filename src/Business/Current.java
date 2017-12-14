@@ -13,38 +13,29 @@ public class Current {
     //Amperer
     
     double amp;
-
-    public Current() {
-        this.amp = amp;
-    }
     
     
-    public void wattOverOhmSqrt(double watt, double ohm){
+    public double wattOverOhmSqrt(double watt, double ohm){
+        System.out.println("Method wattOverOhmSqrt called");
+        
         amp = Math.sqrt(watt/ohm);
         
-        System.out.println("Amps needed = " + amp);
+        return amp;
         
     }
     
-    public void wattOverVolt(double watt, double volt){
+    public double wattOverVolt(double watt, double volt){
+        System.out.println("Method wattOverVolt called");
         amp = watt/volt;
         
-        System.out.println("Amps needed = " + amp);
+        return amp;
     }
     
-    public double VoltOverOhm(double volt, double ohm){
-        System.out.println("Method called");
+    public double voltOverOhm(double volt, double ohm){
+        System.out.println("Method VoltOverOhm called");
         amp = volt/ohm;
         
-        System.out.println("Amps needed = " + amp);
-        
         return amp;
-    }
-
-    public double getAmp() {
-        return amp;
-    }
-    
-    
+    }    
     
 }

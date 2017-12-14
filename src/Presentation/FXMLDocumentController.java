@@ -83,16 +83,14 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void amp1(ActionEvent event) {
-              
-        double calculation = business.getVoltOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText()));
-        
-        result.clear();
-        result.setText(calculation + "");
+          
+        result.setText(business.getVoltOverOhm(Double.parseDouble(voltInput.getText()), Double.parseDouble(ohminput.getText())) + "");
     }
 
     @FXML
     private void amp2(ActionEvent event) {
-        current.wattOverVolt(Double.parseDouble(wattInput.getText()), Double.parseDouble(voltInput.getText()));
+        
+        result.setText(business.getWattOverVolt(Double.parseDouble(wattInput.getText()), Double.parseDouble(voltInput.getText())) + "");
     }
 
     @FXML
