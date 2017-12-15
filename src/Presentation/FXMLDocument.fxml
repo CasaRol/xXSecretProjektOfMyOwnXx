@@ -5,13 +5,29 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="968.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.FXMLDocumentController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="749.0" prefWidth="968.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/9.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Presentation.FXMLDocumentController">
    <children>
+      <Circle fill="#7d2ee1" layoutX="301.0" layoutY="376.0" radius="280.0" stroke="BLACK" strokeType="INSIDE" style="-fx-fill: radial-gradient(radius 180%, #7d2ee1, derive(#7d2ee1, -30%), derive(burlywood, 30%));">
+         <effect>
+            <Lighting specularConstant="0.67" specularExponent="9.77" surfaceScale="0.0">
+               <bumpInput>
+                  <Shadow />
+               </bumpInput>
+               <light>
+                  <Light.Distant color="#fa0aca" />
+               </light>
+            </Lighting>
+         </effect>
+      </Circle>
       <ImageView fitHeight="563.0" fitWidth="574.0" layoutX="14.0" layoutY="94.0">
          <image>
             <Image url="@AssetesLibrary/Ohms_law_wheel_WVOA.svg.png" />
@@ -32,7 +48,6 @@
       <RadioButton fx:id="wattOverAmp" layoutX="214.0" layoutY="444.0" mnemonicParsing="false" toggleGroup="$selectOption" />
       <RadioButton fx:id="ohmTimesWattSqrt" layoutX="192.0" layoutY="393.0" mnemonicParsing="false" toggleGroup="$selectOption" />
       <RadioButton fx:id="voltTimesAmp" layoutX="181.0" layoutY="333.0" mnemonicParsing="false" toggleGroup="$selectOption" />
-      <TextField editable="false" focusTraversable="false" layoutX="179.0" layoutY="40.0" prefHeight="25.0" prefWidth="244.0" style="-fx-border-color: #7d2ee1;" text="Press the button for the needed calculation" />
       <Label layoutX="199.0" layoutY="163.0" text="3" />
       <Label layoutX="102.0" layoutY="241.0" text="2" />
       <Label layoutX="65.0" layoutY="350.0" text="1" />
@@ -72,5 +87,10 @@
             <Image url="@AssetesLibrary/Madsen-el_logo.png" />
          </image>
       </ImageView>
+      <Label layoutX="168.0" layoutY="42.0" text="Press the button for the needed calculation" underline="true">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>
