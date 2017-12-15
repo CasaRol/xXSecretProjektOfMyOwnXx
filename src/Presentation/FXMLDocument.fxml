@@ -69,7 +69,7 @@
       </Label>
       <ImageView fitHeight="34.0" fitWidth="165.0" layoutX="11.0" layoutY="701.0">
          <image>
-            <Image url="@../../../../../Madsen-el_logo.png" />
+            <Image url="@AssetesLibrary/Madsen-el_logo.png" />
          </image>
       </ImageView>
    </children>
